@@ -1,6 +1,5 @@
 
 <?php
-$dom = new DOMDocument();
 $html='<html>
 
 <head>
@@ -13,7 +12,6 @@ $html='<html>
   <h2>TABLE</h2>
 
 <div id="id01"></div>
-</script>
 
   <p>Pages (HTML)</p>
   <p>Style Sheets (CSS)</p>
@@ -22,6 +20,7 @@ $html='<html>
 
 </body>
 </html>'
+$dom = new DOMDocument();
 $dom->validateOnParse = true;
 $dom->loadHTML($html);     
 $dom->preserveWhiteSpace = false;
@@ -30,4 +29,3 @@ $jsonurl = "http://arduino-uno-test.azure-mobile.net/tables/telemetry";
 $json = file_get_contents($jsonurl);
 $elem = $dom->getElementById("id01")->innerHTML = json_decode($json);
 ?>
-
