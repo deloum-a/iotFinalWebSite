@@ -20,7 +20,7 @@ for (var i = url.length - 1; i >= 0; i--) {
   xmlHttp.open("GET", url[i], false);
   xmlHttp.send(null);
   var header = url[i].split('/');
-  document.getElementById("id01").innerHTML += jsonToTableHor(xmlHttp.responseText, 'table', 'value', header[header.length-1]);
+  document.getElementById("id01").innerHTML += jsonToTableVer(xmlHttp.responseText, 'table', 'value', header[header.length-1]);
 };
 </script> 
 
