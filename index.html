@@ -20,10 +20,8 @@ var url = ["http://arduino-uno-test.azure-mobile.net/tables/telemetry","http://a
 for (var i = url.length - 1; i >= 0; i--) {
   xmlHttp.open("GET", url[i], false);
   xmlHttp.send(null);
-  console.log(url[i].split('/')[-1]);
-  console.log(url[i].split('/'));
-  console.log(url[i].split('/')[0]);
-  document.getElementById("id01").innerHTML += CrunchifyTableView(xmlHttp.responseText, 'table', 'value', url[i].split('/')[-1]);
+  var header = url[i].split('/');
+  document.getElementById("id01").innerHTML += CrunchifyTableView(xmlHttp.responseText, 'table', 'value', header[header.length-1]);
 };
 </script> 
 
