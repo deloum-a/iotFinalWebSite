@@ -1,7 +1,34 @@
-/**
- * JavaScript format string function
- * 
- */
+function CrunchifyTableView(objArray, theme) {
+
+    needHeader = true;
+        
+    var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+    
+    var str = '<table class="' + theme + '">';
+
+    // Only create table head if needHeader is set to True..
+    if (needHeader) {
+        str += '<thead><tr>';
+        for (var index in array[0]) {
+            str += '<th scope="col">' + index + '</th>';
+        }
+        str += '</tr></thead>';
+    }
+
+    // table body
+    str += '<tbody>';
+    for (var i = 0; i < array.length; i++) {
+        str += (i % 2 == 0) ? '<tr class="alt">' : '<tr>';
+        for (var index in array[i]) {
+            str += '<td>' + array[i][index] + '</td>';
+        }
+        str += '</tr>';
+    }
+    str += '</tbody>'
+    str += '</table>';
+    return str;
+}
+
 String.prototype.format = function()
 {
   var args = arguments;
@@ -13,40 +40,6 @@ String.prototype.format = function()
   });
 };
 
-
-/**
- * Convert a Javascript Oject array or String array to an HTML table
- * JSON parsing has to be made before function call
- * It allows use of other JSON parsing methods like jQuery.parseJSON
- * http(s)://, ftp://, file:// and javascript:; links are automatically computed
- *
- * JSON data samples that should be parsed and then can be converted to an HTML table
- *     var objectArray = '[{"Total":"34","Version":"1.0.4","Office":"New York"},{"Total":"67","Version":"1.1.0","Office":"Paris"}]';
- *     var stringArray = '["New York","Berlin","Paris","Marrakech","Moscow"]';
- *     var nestedTable = '[{ key1: "val1", key2: "val2", key3: { tableId: "tblIdNested1", tableClassName: "clsNested", linkText: "Download", data: [{ subkey1: "subval1", subkey2: "subval2", subkey3: "subval3" }] } }]'; 
- *
- * Code sample to create a HTML table Javascript String
- *     var jsonHtmlTable = ConvertJsonToTable(eval(dataString), 'jsonTable', null, 'Download');
- *
- * Code sample explaned
- *  - eval is used to parse a JSON dataString
- *  - table HTML id attribute will be 'jsonTable'
- *  - table HTML class attribute will not be added
- *  - 'Download' text will be displayed instead of the link itself
- *
- * @author Afshin Mehrabani <afshin dot meh at gmail dot com>
- * 
- * @class ConvertJsonToTable
- * 
- * @method ConvertJsonToTable
- * 
- * @param parsedJson object Parsed JSON data
- * @param tableId string Optional table id 
- * @param tableClassName string Optional table css class name
- * @param linkText string Optional text replacement for link pattern
- *  
- * @return string Converted JSON to HTML table
- */
 function ConvertJsonToTable(parsedJson, tableId, tableClassName, linkText)
 {
     //Patterns for links and NULL value
@@ -149,21 +142,6 @@ function ConvertJsonToTable(parsedJson, tableId, tableClassName, linkText)
     return null;
 }
 
-
-/**
- * Return just the keys from the input array, optionally only for the specified search_value
- * version: 1109.2015
- *  discuss at: http://phpjs.org/functions/array_keys
- *  +   original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
- *  +      input by: Brett Zamir (http://brett-zamir.me)
- *  +   bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
- *  +   improved by: jd
- *  +   improved by: Brett Zamir (http://brett-zamir.me)
- *  +   input by: P
- *  +   bugfixed by: Brett Zamir (http://brett-zamir.me)
- *  *     example 1: array_keys( {firstname: 'Kevin', surname: 'van Zonneveld'} );
- *  *     returns 1: {0: 'firstname', 1: 'surname'}
- */
 function array_keys(input, search_value, argStrict)
 {
     var search = typeof search_value !== 'undefined', tmp_arr = [], strict = !!argStrict, include = true, key = '';
