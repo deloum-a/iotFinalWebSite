@@ -1,5 +1,5 @@
 
-function CrunchifyTableView(objArray, theme, value) {
+function CrunchifyTableView(objArray, theme, value, header) {
 
     needHeader = true;
         
@@ -15,7 +15,7 @@ function CrunchifyTableView(objArray, theme, value) {
         str += '<thead><tr>';
         for (var index in array[0]) {
             if (index == value)
-                str += '<th scope="col">' + index + '</th>';
+                str += '<th scope="col">' + header + '</th>';
         }
 
     for (var i = 0; i < array.length; i++) {    
