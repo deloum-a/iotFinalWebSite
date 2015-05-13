@@ -19,14 +19,12 @@ function CrunchifyTableView(objArray, theme, value) {
     // table body
     str += '<tbody>';
     for (var i = 0; i < array.length; i++) {
-        if (array[i] == value)
-        {
-            str += (i % 2 == 0) ? '<tr class="alt">' : '<tr>';
-            for (var index in array[i]) {
+        str += (i % 2 == 0) ? '<tr class="alt">' : '<tr>';
+        for (var index in array[i]) {
+            if (index == value)
                 str += '<td>' + array[i][index] + '</td>';
-            }
+        }
         str += '</tr>';
-        }  
     }
     str += '</tbody>'
     str += '</table>';
