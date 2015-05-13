@@ -1,5 +1,5 @@
 
-function CrunchifyTableView(objArray, theme, value, header) {
+function jsonToTableVer(objArray, theme, value, header) {
 
     needHeader = true;
         
@@ -30,7 +30,7 @@ function CrunchifyTableView(objArray, theme, value, header) {
     return str;
 }
 
-function CrunchifyTableViewss(objArray, theme, value) {
+function jsonToTableHor(objArray, theme, value, header) {
 
     needHeader = true;
         
@@ -43,7 +43,7 @@ function CrunchifyTableViewss(objArray, theme, value) {
         str += '<thead><tr>';
         for (var index in array[0]) {
             if (index == value)
-                str += '<th scope="col">' + index + '</th>';
+                str += '<th scope="col">' + header + '</th>';
         }
         str += '</tr></thead>';
     }
