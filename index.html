@@ -2,21 +2,21 @@
 <html>
 
 <head>
-  <title>WebSite</title>
+  <title>FinalWebSite</title>
   <link href="jsonToTable.css" rel="stylesheet"
   type="text/css" />
 </head>
 
 <body>
-  <h1>TITLE/NAMES</h1>
-  <h2>TABLE</h2>
 
 <div id="id01"></div>
 
 <script type="text/javascript" src="jsonToTable.js" ></script>
+
 <script language="javascript" type="text/javascript">
 var xmlHttp = new XMLHttpRequest();
 var url = ["http://arduino-uno-test.azure-mobile.net/tables/telemetry","http://arduino-uno-test.azure-mobile.net/tables/telemetry"];
+
 for (var i = url.length - 1; i >= 0; i--) {
   xmlHttp.open("GET", url[i], false);
   xmlHttp.send(null);
@@ -24,11 +24,6 @@ for (var i = url.length - 1; i >= 0; i--) {
   document.getElementById("id01").innerHTML += CrunchifyTableView(xmlHttp.responseText, 'table', 'value', header[header.length-1]);
 };
 </script> 
-
-  <p>Pages (HTML)</p>
-  <p>Style Sheets (CSS)</p>
-  <p>Computer Code (JavaScript)</p>
-  <p>Live Data (Files and Databases)</p>
 
 </body>
 </html>
