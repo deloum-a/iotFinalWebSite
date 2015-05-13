@@ -18,7 +18,7 @@ var url = "http://arduino-uno-test.azure-mobile.net/tables/telemetry";
 
 xmlHttp.open("GET", url, false);
 xmlHttp.send(null);
-var jsonHtmlTable = ConvertJsonToTable(xmlHttp.responseText, 'telemetry');
+var jsonHtmlTable = ConvertJsonToTable(xmlHttp.responseText, 'jsonTable', null,'telemetry');
 document.getElementById("id01").innerHTML = jsonHtmlTable;
 
 </script> 
