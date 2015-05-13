@@ -16,7 +16,6 @@
 var xmlhttp = new XMLHttpRequest();
 var url = "http://arduino-uno-test.azure-mobile.net/tables/telemetry";
 
-xmlhttp.addHeader("Access-Control-Allow-Origin", url);
 xmlhttp.onreadystatechange = function() {
   if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       var myArr = JSON.parse(xmlhttp.responseText);
@@ -24,6 +23,7 @@ xmlhttp.onreadystatechange = function() {
   }
 }
 xmlhttp.open("GET", url, true);
+xmlhttp.setRequestHeader("Accept", url);
 xmlhttp.send();
 
 function myFunction(arr) {
