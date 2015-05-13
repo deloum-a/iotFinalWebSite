@@ -17,13 +17,13 @@ function CrunchifyTableView(objArray, theme, value) {
             if (index == value)
                 str += '<th scope="col">' + index + '</th>';
         }
-        str += '</tr></thead>';
+
         
         for (var index in array[i]) {
             if (index == value)
                 str += '<td>' + array[i][index] + '</td>';
         }
-        str += '</tr>';
+        str += '</tr></thead>';
     }
     str += '</tbody>'
     str += '</table>';
