@@ -6,19 +6,20 @@
 </head>
 
 <body>
-<div id="id01"></div>
   <h1>TITLE/NAMES</h1>
   <h2>TABLE</h2>
 
 <div id="id01"></div>
 
+<script type="text/javascript" src="jsonToTable.js" ></script>
 <script language="javascript" type="text/javascript">
 var xmlHttp = new XMLHttpRequest();
 var url = "http://arduino-uno-test.azure-mobile.net/tables/telemetry";
 
 xmlHttp.open("GET", url, false);
 xmlHttp.send(null);
-document.getElementById("id01").innerHTML = xmlHttp.responseText;
+var jsonHtmlTable = ConvertJsonToTable(xmlHttp.responseText, 'telemetry');
+document.getElementById("id01").innerHTML = jsonHtmlTable;
 
 </script> 
 
