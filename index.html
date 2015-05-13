@@ -16,14 +16,13 @@
 <script type="text/javascript" src="jsonToTable.js" ></script>
 <script language="javascript" type="text/javascript">
 var xmlHttp = new XMLHttpRequest();
-var url = "http://arduino-uno-test.azure-mobile.net/tables/telemetry";
+var url = ["http://arduino-uno-test.azure-mobile.net/tables/telemetry","http://arduino-uno-test.azure-mobile.net/tables/telemetry"];
+for (var i = url.length - 1; i >= 0; i--) {
+  xmlHttp.open("GET", url[i], false);
+  xmlHttp.send(null);
 
-xmlHttp.open("GET", url, false);
-xmlHttp.send(null);
-/*var jsonHtmlTable = ConvertJsonToTable(xmlHttp.responseText, 'jsonTable', null,'telemetry');xmlHttp.responseText*/
-
-document.getElementById("id01").innerHTML = CrunchifyTableView(xmlHttp.responseText, 'table', 'value');
-
+  document.getElementById("id01").innerHTML += CrunchifyTableView(xmlHttp.responseText, 'table', 'value');
+);
 </script> 
 
   <p>Pages (HTML)</p>
