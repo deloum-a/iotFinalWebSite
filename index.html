@@ -17,7 +17,7 @@ var xmlHttp = new XMLHttpRequest();
 var url = ["http://arduino-uno-test.azure-mobile.net/tables/telemetry","http://arduino-uno-test.azure-mobile.net/tables/telemetry"];
 
 for (var i = url.length - 1; i >= 0; i--) {
-  xmlHttp.open("GET", url[i], true);
+  xmlHttp.open("GET", url[i], false);
   xmlHttp.send(null);
   var header = url[i].split('/');
   document.getElementById("id01").innerHTML += CrunchifyTableView(xmlHttp.responseText, 'table', 'value', header[header.length-1]);
