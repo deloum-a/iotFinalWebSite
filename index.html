@@ -26,11 +26,11 @@
       header[i] = header[i][header[i].length-1];
       data[i] = xmlHttp.responseText;
     };
-    document.getElementById("id01").innerHTML += jsonToTableVer(data, 'table', 'value', header);
+    document.getElementById("id01").innerHTML += jsonToTableVerSpe(data, 'table', 'value', header);
   
   }
-  
-  function statusChangeCallback(response) {
+  getData();
+  /*function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
 
@@ -82,7 +82,7 @@
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
-  }
+  }*/
 </script>
 
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
