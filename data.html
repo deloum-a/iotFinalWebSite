@@ -21,7 +21,8 @@ function getData() {
       xmlHttp.open("GET", url[i], false);
       xmlHttp.send(null);
       var tmp = url[i].split('/');
-      header.push(tmp[tmp.length - 1]);
+      tmp = tmp[tmp.length - 1];
+      header.push(tmp.split('?')[0]);
       data.push(xmlHttp.responseText);
     };
     document.getElementById("id01").innerHTML = "";
