@@ -28,14 +28,16 @@ function jsonToTableVerSpe(objArray, theme, value, header) {
     str += '<tbody>';
     for (var i = jsonArray.length - 1; i >= 0; i--) {
         array = jsonArray[i];
+        str += (i % 2 == 0) ? '<tr class="alt">' : '<tr>';
         for (var j = 0; j < array.length; j++) {
-            str += (j % 2 == 0) ? '<tr class="alt">' : '<tr>';
+            
             for (var index in array[j]) {
                 if (index == value)
                     str += '<td>' + array[j][index] + '</td>';
             }
-            str += '</tr>';
+          
         }
+        str += '</tr>';
 }
     str += '</tbody>'
     str += '</table>';
