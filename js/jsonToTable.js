@@ -104,4 +104,4 @@ function jsonToTableVer(objArray, theme, value, header) {
     str += '</tbody>'
     str += '</table>';
     return str;
-}
+}*/
