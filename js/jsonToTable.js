@@ -27,7 +27,7 @@ function jsonToTableVerSpe(objArray, theme, value, header) {
     // table body
     str += '<tbody>';
     for (var i = jsonArray.length - 1; i >= 0; i--) {
-        array = array = jsonArray[i];
+        array = jsonArray[i];
         for (var i = 0; i < array.length; i++) {
             str += (i % 2 == 0) ? '<tr class="alt">' : '<tr>';
             for (var index in array[i]) {
