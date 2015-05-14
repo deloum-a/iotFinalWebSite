@@ -319,7 +319,7 @@ table tr {
 }
  
 table td:first-child {
-	text-align: left;
+	text-align: center;
 	padding-left: 20px;
 	border-left: 0;
 }
