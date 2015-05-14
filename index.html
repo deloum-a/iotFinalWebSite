@@ -26,7 +26,8 @@
       xmlHttp.send(null);
       header.push(url[i].split('/'));
       console.log(url[i].split('/'));
-      var pos = header[i].length - 1;
+      var tmp = url[i].split('/');
+      console.log(tmp.length);
       header[i] = header[i][pos];
       data.push(xmlHttp.responseText);
     };
