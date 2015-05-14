@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html>
-
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>FinalWebSite</title>
-  <link href="css/jsonToTable.css" rel="stylesheet" type="text/css" />
-  <meta charset="UTF-8">
-</head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FinalWebSite</title>
+<meta name="keywords" content="Arduino Microsoft Azure" />
+<meta name="description" content="Show data from arduino" />
+<link href="css/jsonToTable.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
 
-<body>
-
-<script type="text/javascript" src="js/jsonToTable.js" ></script>
+<meta charset="UTF-8">
 
 <script language="javascript" type="text/javascript">
-
-  function getData() {
+function getData() {
     var data = [];
     var header = [];
     var xmlHttp = new XMLHttpRequest();
@@ -82,14 +80,102 @@ function statusChangeCallback(response) {
         'Thanks for logging in, ' + response.name + '!';
     });
   }
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
 </script>
+</head>
+<body>
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
+<div id="templatemo_container">
 
-<div id="status"></div>
+	<div id="templatemo_site_title_wrapper">
+    
+    	<div id="site_title">
+            <h1>
+                <a>CloudUno
+                <span>Arduno/MicrosoftAzure/WebSite</span></a>
+            </h1>
+        </div>
+    
+    </div> <!-- end of site title -->
+    
+	<div id="templatemo_banner">
+    </div> 
+    <!-- end of banner -->
+    
+    <div id="templatemo_menu">
+    
+	    <ul>
+            <li><a href="#" class="current">Home</a></li>
+            <li><a href="#" class="last">Data</a></li>
+        </ul>
+    
+    </div>
+    
+    <div id="templatemo_content">
+    
+    	<div class="section_w920">
+        
+        	<h2>Our Project</h2>
+        
+   	  <div class="section_w430 fl">
+            	<img class="image_wrapper fl_image" src="images/templatemo_image_01.png" alt="image" />
+              	<h3>Nunc</h3>
+            	 <p>templatemo</p>
+          </div>
+            
+            <div class="section_w430 fr">
+            	<img class="image_wrapper fl_image" src="images/templatemo_image_02.png" alt="image" />
+                <h3>Curabitur vel ligula felis</h3>
+            	<p>Lorem</p>	
+            
+            </div>
+        
+        	<div class="cleaner"></div>
+      </div>
+        
+        <div class="cleaner_h50"></div>
+        
+        <div class="section_w920">
+        	<h2>Duis</h2>
+          <p>Curabitur</p>	
+            
+            <div class="cleaner_h20"></div>
+            
+            <img class="image_wrapper fl_image" src="images/templatemo_image_04.png" alt="image" />
+            
+            <p>Pellentesque</p>
+            <p>Aenean</p>
+        <!-- <div class="button_01"><a href="#">Read more</a></div> -->
+            
+            <div class="cleaner"></div>
+            
+      </div>
+     
+    </div>
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
 
-<div id="id01"></div>
+    <div id="status"></div>
+
+    <div id="id01"></div>
+    <div id="templatemo_footer">
+        
+        <ul class="footer_menu">
+            <li><a href="#">Home</a></li>
+            <li class="last_menu"><a href="#">Contact</a></li>
+        </ul>
+
+        Copyright © 2048 <a href="#">FrenchGuys by [Antoine Deloume | Victor Solevic |
+        Alexandre Ghiazza]</a>
+       
+   
+    </div> <!-- end of footer -->
+
+</div> <!-- end of container -->
 
 </body>
 </html>
