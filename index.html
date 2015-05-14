@@ -24,9 +24,9 @@
     for (var i = url.length - 1; i >= 0; i--) {
       xmlHttp.open("GET", url[i], false);
       xmlHttp.send(null);
-      header += url[i].split('/');
+      header.push(url[i].split('/'));
       header[i] = header[i][header[i].length-1];
-      data += xmlHttp.responseText;
+      data.push(xmlHttp.responseText);
     };
     console.log(header);
     document.getElementById("id01").innerHTML += jsonToTableVerSpe(data, 'table', 'value', header);
