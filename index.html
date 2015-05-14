@@ -31,7 +31,7 @@
   
   }
   getData();
-  /*function statusChangeCallback(response) {
+  function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
 
@@ -83,7 +83,7 @@
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
-  }*/
+  }
 </script>
 
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
