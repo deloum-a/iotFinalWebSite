@@ -1,6 +1,4 @@
 
-function jsonToTableVerSpe(objArray, theme, value, header) {
-return "";}
 /*
 function jsonToTableHor(objArray, theme, value, header) {
 
@@ -31,7 +29,7 @@ function jsonToTableHor(objArray, theme, value, header) {
     str += '</tbody>'
     str += '</table>';
     return str;
-}
+}*/
 
 function jsonToTableVerSpe(objArray, theme, value, header) {
 
@@ -75,7 +73,7 @@ function jsonToTableVerSpe(objArray, theme, value, header) {
     str += '</table>';
     return str;
 }
-
+/*
 function jsonToTableVer(objArray, theme, value, header) {
 
     needHeader = true;
@@ -107,4 +105,4 @@ function jsonToTableVer(objArray, theme, value, header) {
     str += '</tbody>'
     str += '</table>';
     return str;
-}*/
+}
