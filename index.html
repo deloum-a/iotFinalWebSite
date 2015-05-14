@@ -25,10 +25,8 @@
       xmlHttp.open("GET", url[i], false);
       xmlHttp.send(null);
       header.push(url[i].split('/'));
-      console.log(url[i].split('/'));
       var tmp = url[i].split('/');
-      console.log(tmp.length);
-      header[i] = header[i][pos];
+      header[i] = header[i][tmp.length - 1];
       data.push(xmlHttp.responseText);
     };
     console.log(header);
