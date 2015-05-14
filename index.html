@@ -24,9 +24,8 @@
     for (var i = url.length - 1; i >= 0; i--) {
       xmlHttp.open("GET", url[i], false);
       xmlHttp.send(null);
-      header.push(url[i].split('/'));
       var tmp = url[i].split('/');
-      header[i] = header[i][tmp.length - 1];
+      header.push(tmp[tmp.length - 1]);
       data.push(xmlHttp.responseText);
     };
     console.log(header);
