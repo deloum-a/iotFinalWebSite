@@ -24,6 +24,7 @@ function getData() {
       header.push(tmp[tmp.length - 1]);
       data.push(xmlHttp.responseText);
     };
+    document.getElementById("id01").innerHTML = "";
     document.getElementById("id01").innerHTML += jsonToTableVerSpe(data, 'table', 'value', header);
   }
 
@@ -126,7 +127,7 @@ function clearText(field)
       </div>
     </div>
     
-    <div id="id01"></div>
+    <div id="id01"><p>You need an Facebook connection to see the data</p></div>
     <div id="templatemo_footer">
         
         <ul class="footer_menu">
