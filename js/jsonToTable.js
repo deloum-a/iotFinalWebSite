@@ -2,7 +2,7 @@
 function jsonToTableVerSpe(objArray, theme, value, header) {
 
     needHeader = true;
-    var jsonArray;
+    var jsonArray = [];
 
     for (var i = objArray.length - 1; i >= 0; i--) {
         jsonArray.push(typeof objArray[i] != 'object' ? JSON.parse(objArray[i]) : objArray[i]);
