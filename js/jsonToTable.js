@@ -32,7 +32,7 @@ function jsonToTableVerSpe(objArray, theme, value, header) {
         for (var j = jsonArray.length - 1; j >= 0; j--) {
             array = jsonArray[j];
             if (value in array[i])
-                str += '<td>' + array[value][index] + '</td>';
+                str += '<td>' + array[i][value] + '</td>';
         }
         str += '</tr>';
     }
