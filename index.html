@@ -9,9 +9,9 @@
 
 <div id="id01"></div>
 
-<script src="js/jsonToTable.js" ></script>
+<script type="text/javascript" src="js/jsonToTable.js" ></script>
 
-<script>
+<script language="javascript" type="text/javascript">
 
   function getData() {
     var data = [];
@@ -26,7 +26,7 @@
       header[i] = header[i][header[i].length-1];
       data += xmlHttp.responseText;
     };
-    //console.log(header);
+    console.log(header);
     document.getElementById("id01").innerHTML += jsonToTableVerSpe(data, 'table', 'value', header);
   
   }
