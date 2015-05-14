@@ -1,5 +1,5 @@
 
-function jsonToTableVer(objArray, theme, value, header) {
+function jsonToTableHor(objArray, theme, value, header) {
 
     needHeader = true;
         
@@ -30,7 +30,50 @@ function jsonToTableVer(objArray, theme, value, header) {
     return str;
 }
 
-function jsonToTableHor(objArray, theme, value, header) {
+function jsonToTableVerSpe(objArray, theme, value, header) {
+
+    needHeader = true;
+    var jsonArray;
+
+    for (var i = objArray.length - 1; i >= 0; i--) {
+        jsonArray[i] = typeof objArray[i] != 'object' ? JSON.parse(objArray[i]) : objArray[i];
+    };
+    
+    
+    var str = '<table class="' + theme + '">';
+    var array;
+    // Only create table head if needHeader is set to True..
+    if (needHeader) {
+        str += '<thead><tr>';
+        for (var i = jsonArray.length - 1; i >= 0; i--) {
+            array = jsonArray[i];
+            for (var index in array[0]) {
+                if (index == value)
+                    str += '<th scope="col">' + header[i] + '</th>';
+            }
+        }
+        str += '</tr></thead>';
+    }
+
+    // table body
+    str += '<tbody>';
+    for (var i = jsonArray.length - 1; i >= 0; i--) {
+        array = array = jsonArray[i];
+        for (var i = 0; i < array.length; i++) {
+            str += (i % 2 == 0) ? '<tr class="alt">' : '<tr>';
+            for (var index in array[i]) {
+                if (index == value)
+                    str += '<td>' + array[i][index] + '</td>';
+            }
+            str += '</tr>';
+        }
+}
+    str += '</tbody>'
+    str += '</table>';
+    return str;
+}
+
+function jsonToTableVer(objArray, theme, value, header) {
 
     needHeader = true;
         

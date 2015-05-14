@@ -14,15 +14,20 @@
 <script language="javascript" type="text/javascript">
 
   function getData() {
+    var data;
+    var header;
     var xmlHttp = new XMLHttpRequest();
     var url = ["http://arduino-uno-test.azure-mobile.net/tables/telemetry","http://arduino-uno-test.azure-mobile.net/tables/telemetry"];
 
     for (var i = url.length - 1; i >= 0; i--) {
       xmlHttp.open("GET", url[i], false);
       xmlHttp.send(null);
-      var header = url[i].split('/');
-      document.getElementById("id01").innerHTML += jsonToTableVer(xmlHttp.responseText, 'table', 'value', header[header.length-1]);
+      header[i] = url[i].split('/');
+      header[i] = header[i][header[i].length-1];
+      data[i] = xmlHttp.responseText;
     };
+    document.getElementById("id01").innerHTML += jsonToTableVer(data, 'table', 'value', header);
+  
   }
   
   function statusChangeCallback(response) {
